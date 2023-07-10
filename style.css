@@ -1,0 +1,46 @@
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script&family=Poppins:wght@200;300;400;500;600;700;800;900&family=Sacramento&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+}
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+.container {
+  height: 100vh;
+  width: 100%;
+  background: linear-gradient(#e66465, #9198e5);
+}
+
+.todo-box {
+  position: relative;
+  /* display: flex;
+  justify-content: center;
+  text-align: center; */
+  top: 200px;
+  min-height: 50vh;
+  width: 50%;
+  margin: auto;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 20px 20px 30px rgb(0, 0, 0, 0.5);
+  padding: 2.5rem;
+}
+
+.time-date {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem;
+}
+
+.time-date h3 {
+  color: #272626;
+  font-weight: 400;
+  letter-spacing: 2px;
+}
