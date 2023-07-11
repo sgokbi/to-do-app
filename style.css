@@ -119,6 +119,33 @@ input {
   border: 2px solid #333232;
 }
 
+.list input[type="checkbox"]:before {
+  content: "";
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+}
+
+.list input [type="checkbox"]:checked {
+  background-color: #2133f3;
+  border-color: #5a95ff;
+}
+
+.list input[type="checkbox"]:checked::before {
+  position: absolute;
+  content: "\f00c";
+  color: #fff;
+  font-size: 0.8rem;
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+}
+
+.completed {
+  text-decoration: line-through;
+  color: var(--text-large);
+}
+
 .list span {
   font: 0.5rem;
   font-weight: 400;

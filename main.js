@@ -21,31 +21,48 @@ setInterval(() => {
 
 // TASK COUNT
 let todoListCount = 0;
-
-const displayTaskCount = function (todoListCount) {
+const displayTodoListCount = function (todoListCount) {
   todoNumber.innerText = todoListCount;
 };
 
-// add to do list
-addBtn.addEventListener("click", function () {
+// ADD TO-DO LIST
+const addTodoList = function () {
   const todoName = todoField.value;
 
   if (!todoName) {
     alert("Input field cannot be empty! Please write a task.");
-  } else {
-    const task = `
+  }
+
+  const todo = `
     <div class="list">
-      <input type="checkbox" class="list-check checked" />
-      <span class="list-name">${todoName}</span>
+      <input type="checkbox" class="list-check" />
+      <span class="task-name">${todoName}</span>
       <button class="edit">
         <i class="fa-solid fa-pen-to-square"></i>
       </button>
       <button class="delete"><i class="fa-solid fa-trash"></i></button>
-     </div>
-    `;
-    listContainer.insertAdjacentHTML("beforeend", task);
-  }
+    </div>
+  `;
 
+  listContainer.insertAdjacentHTML("beforeend", todo);
+
+  // To do list number check
+  const listsCheck = document.querySelectorAll(".list-check");
+  listsCheck.forEach((checkbox) => {
+    console.log(checkbox.nextElementSibling);
+    checkbox.onchange = () => {
+      console.log("change");
+      checkbox.nextElementSibling.classList.toggle("completed");
+      if (checkbox.checked) {
+        todoListCount -= 1;
+      } else {
+        todoListCount += 1;
+      }
+      displayTodoListCount(todoListCount);
+    };
+  });
+
+  // Edit btn
   const editButtons = document.querySelectorAll(".edit");
   editButtons.forEach((editBtn) => {
     editBtn.addEventListener("click", function (e) {
@@ -62,15 +79,27 @@ addBtn.addEventListener("click", function () {
       // console.log(targetElement.previousElementSibling);
       // console.log(targetElement.parentNode);
 
-      todoField.value = targetElement.previousElementSibling.innerText;
+      todoField.value = targetElement.previousElementSibling?.innerText;
       targetElement.parentNode.remove();
 
-      todoListCount = todoListCount - 1;
-      displayTaskCount(todoListCount);
+      todoListCount -= 1;
+      displayTodoListCount(todoListCount);
     });
   });
 
-  todoField.value = "";
+  // Delete btn
+  const deleteButtons = document.querySelectorAll(".delete");
+  deleteButtons.forEach((deleteBtn) => {
+    deleteBtn.onclick = () => {
+      deleteBtn.parentNode.remove();
+      todoListCount -= 1;
+      displayTodoListCount(todoListCount);
+    };
+  });
 
-  //
-});
+  todoListCount += 1;
+  displayTodoListCount(todoListCount);
+  todoField.value = "";
+};
+
+addBtn.addEventListener("click", addTodoList);
