@@ -6,6 +6,8 @@
   box-sizing: border-box;
   text-decoration: none;
   list-style: none;
+  border: none;
+  outline: none;
 }
 body {
   font-family: "Poppins", sans-serif;
@@ -24,7 +26,7 @@ body {
   text-align: center; */
   top: 200px;
   min-height: 50vh;
-  width: 50%;
+  width: 40%;
   margin: auto;
   background-color: #fff;
   border-radius: 5px;
@@ -40,7 +42,47 @@ body {
 }
 
 .time-date h3 {
-  color: #272626;
-  font-weight: 400;
+  color: #5a68fa;
+
+  font-weight: 500;
   letter-spacing: 2px;
+}
+
+.todo-heading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.todo-heading h2 {
+  color: #686767;
+}
+
+.todo-heading img {
+  width: 50px;
+}
+
+.input-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f1e0f8;
+  border-radius: 40px;
+}
+
+input {
+  flex: 1;
+  padding: 0.8rem 2rem;
+  font-size: 1rem;
+  background-color: transparent;
+}
+
+button {
+  padding: 0.8rem 2.2rem;
+  border-radius: 40px;
+  background-color: #e66466;
+  color: #fff;
+  font-size: 1rem;
 }
