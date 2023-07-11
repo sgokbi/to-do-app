@@ -9,10 +9,13 @@
     <!-- CSS LINK  -->
     <link rel="stylesheet" href="style.css" />
 
-    <!-- REMIX ICON LINK  -->
+    <!-- FONT AWESOME LINK  -->
     <link
-      href="https://cdn.jsdelivr.net/npm/remixicon@3.4.0/fonts/remixicon.css"
       rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
     />
   </head>
 
@@ -35,8 +38,35 @@
 
         <!-- INPUT FILED  -->
         <div class="input-box">
-          <input type="text" placeholder="write your work list here" />
-          <button id="add">Add</button>
+          <input type="text" placeholder="write your task here" />
+          <button id="add-btn">Add</button>
+        </div>
+
+        <!-- Remaining task massage  -->
+        <div class="list-left-message">
+          <p>
+            You have <span class="task-number">0</span> dtask (s) to complete
+          </p>
+        </div>
+
+        <!-- Todo list container  -->
+        <div class="todo-list-container">
+          <div class="list">
+            <input type="checkbox" class="list-check checked" />
+            <span class="list-name">Task - 1</span>
+            <button class="edit">
+              <i class="fa-solid fa-pen-to-square"></i>
+            </button>
+            <button class="delete"><i class="fa-solid fa-trash"></i></button>
+          </div>
+          <div class="list">
+            <input type="checkbox" class="list-check" />
+            <span class="list-name">Task - 2</span>
+            <button class="edit">
+              <i class="fa-solid fa-pen-to-square"></i>
+            </button>
+            <button class="delete"><i class="fa-solid fa-trash"></i></button>
+          </div>
         </div>
       </div>
     </div>

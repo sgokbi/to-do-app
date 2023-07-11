@@ -9,6 +9,12 @@
   border: none;
   outline: none;
 }
+
+:root {
+  --text-large: #686767;
+  --text-medium: #646161;
+}
+
 body {
   font-family: "Poppins", sans-serif;
 }
@@ -17,15 +23,12 @@ body {
   height: 100vh;
   width: 100%;
   background: linear-gradient(#e66465, #9198e5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .todo-box {
-  position: relative;
-  /* display: flex;
-  justify-content: center;
-  text-align: center; */
-  top: 200px;
-  min-height: 50vh;
   width: 40%;
   margin: auto;
   background-color: #fff;
@@ -42,8 +45,7 @@ body {
 }
 
 .time-date h3 {
-  color: #5a68fa;
-
+  color: #2133f3;
   font-weight: 500;
   letter-spacing: 2px;
 }
@@ -57,7 +59,7 @@ body {
 }
 
 .todo-heading h2 {
-  color: #686767;
+  color: var(--text-large);
 }
 
 .todo-heading img {
@@ -79,10 +81,96 @@ input {
   background-color: transparent;
 }
 
-button {
+#add-btn {
   padding: 0.8rem 2.2rem;
   border-radius: 40px;
   background-color: #e66466;
   color: #fff;
   font-size: 1rem;
+}
+
+.list-left-message {
+  padding: 1rem;
+  text-align: center;
+}
+
+.list-left-message p {
+  font-size: 1.2rem;
+  color: var(--text-medium);
+}
+
+.list {
+  margin: 0.5rem 0;
+  padding: 0.8rem 0.8rem 0.8rem 2rem;
+
+  display: grid;
+  grid-template-columns: 1fr 16fr 1fr 1fr;
+  gap: 0.6rem;
+  align-items: center;
+  border-bottom: 1px solid #9198e5;
+}
+
+.list input[type="checkbox"] {
+  position: relative;
+  /* appearance: none; */
+  height: 20px;
+  width: 20px;
+  border-radius: 100%;
+  border: 2px solid #333232;
+}
+
+.list span {
+  font: 0.5rem;
+  font-weight: 400;
+  word-break: break-all;
+}
+
+.edit {
+  color: #a28ecc;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.delete {
+  color: #e66466;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+/* ============== RESPONSIVE ============== */
+@media (max-width: 992px) {
+  .todo-box {
+    width: 70%;
+  }
+}
+
+@media (max-width: 668px) {
+  .todo-box {
+    width: 90%;
+  }
+}
+
+@media (max-width: 540px) {
+  .input-box {
+    display: block;
+    background-color: transparent;
+    border-radius: 0;
+    text-align: center;
+  }
+
+  input {
+    width: 100%;
+    font-size: 1rem;
+    background-color: #f1e0f8;
+    border-radius: 40px;
+  }
+
+  #add-btn {
+    padding: 0.4rem 2.2rem;
+    border-radius: 40px;
+    background-color: #e66466;
+    color: #fff;
+    font-size: 1rem;
+    margin-top: 0.6rem;
+  }
 }
