@@ -38,19 +38,21 @@
 
         <!-- INPUT FILED  -->
         <div class="input-box">
-          <input type="text" placeholder="write your task here" />
+          <input
+            type="text"
+            placeholder="write your task here"
+            id="todo-field"
+          />
           <button id="add-btn">Add</button>
         </div>
 
         <!-- Remaining task massage  -->
         <div class="list-left-message">
-          <p>
-            You have <span class="task-number">0</span> dtask (s) to complete
-          </p>
+          <p>You have <span id="task-number">0</span> task (s) to complete</p>
         </div>
 
         <!-- Todo list container  -->
-        <div class="todo-list-container">
+        <div id="todo-list-container">
           <div class="list">
             <input type="checkbox" class="list-check checked" />
             <span class="list-name">Task - 1</span>
