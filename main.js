@@ -19,12 +19,6 @@ setInterval(() => {
   time_.innerHTML = today.toLocaleTimeString();
 }, 1000); // here the 1000 = 1s
 
-// TASK COUNT
-let todoListCount = 0;
-const displayTodoListCount = function (todoListCount) {
-  todoNumber.innerText = todoListCount;
-};
-
 // ADD TO-DO LIST
 const addTodoList = function () {
   const todoName = todoField.value;
@@ -53,12 +47,6 @@ const addTodoList = function () {
     checkbox.onchange = () => {
       console.log("change");
       checkbox.nextElementSibling.classList.toggle("completed");
-      if (checkbox.checked) {
-        todoListCount -= 1;
-      } else {
-        todoListCount += 1;
-      }
-      displayTodoListCount(todoListCount);
     };
   });
 
@@ -68,22 +56,12 @@ const addTodoList = function () {
     editBtn.addEventListener("click", function (e) {
       let targetElement = e.target;
 
-      // console.log(targetElement); // i (icon)
-      // console.log(e.target.parentElement); // button
-      // console.log(e.target.className === "edit"); // false
-
       if (!(e.target.className === "edit")) {
         targetElement = e.target.parentElement;
       }
 
-      // console.log(targetElement.previousElementSibling);
-      // console.log(targetElement.parentNode);
-
       todoField.value = targetElement.previousElementSibling?.innerText;
       targetElement.parentNode.remove();
-
-      todoListCount -= 1;
-      displayTodoListCount(todoListCount);
     });
   });
 
@@ -92,13 +70,9 @@ const addTodoList = function () {
   deleteButtons.forEach((deleteBtn) => {
     deleteBtn.onclick = () => {
       deleteBtn.parentNode.remove();
-      todoListCount -= 1;
-      displayTodoListCount(todoListCount);
     };
   });
 
-  todoListCount += 1;
-  displayTodoListCount(todoListCount);
   todoField.value = "";
 };
 

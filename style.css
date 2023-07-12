@@ -11,8 +11,10 @@
 }
 
 :root {
-  --text-large: #686767;
+  --text-large: #3f3f3f;
   --text-medium: #646161;
+  --reddish-color: #e66466;
+  --purple-color: #a28ecc;
 }
 
 body {
@@ -34,7 +36,7 @@ body {
   background-color: #fff;
   border-radius: 5px;
   box-shadow: 20px 20px 30px rgb(0, 0, 0, 0.5);
-  padding: 2.5rem;
+  padding: 2.5rem 2.5rem 4rem;
 }
 
 .time-date {
@@ -84,19 +86,9 @@ input {
 #add-btn {
   padding: 0.8rem 2.2rem;
   border-radius: 40px;
-  background-color: #e66466;
+  background-color: var(--purple-color);
   color: #fff;
   font-size: 1rem;
-}
-
-.list-left-message {
-  padding: 1rem;
-  text-align: center;
-}
-
-.list-left-message p {
-  font-size: 1.2rem;
-  color: var(--text-medium);
 }
 
 .list {
@@ -143,23 +135,24 @@ input {
 
 .completed {
   text-decoration: line-through;
-  color: var(--text-large);
+  color: var(--reddish-color);
 }
 
 .list span {
   font: 0.5rem;
-  font-weight: 400;
+  font-weight: 500;
   word-break: break-all;
+  font-size: 1rem;
 }
 
 .edit {
-  color: #a28ecc;
+  color: var(--purple-color);
   font-size: 1rem;
   cursor: pointer;
 }
 
 .delete {
-  color: #e66466;
+  color: var(--reddish-color);
   font-size: 1rem;
   cursor: pointer;
 }
